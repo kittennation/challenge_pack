@@ -5,9 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: darkslategrey
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root{
+  height: 100vh;
+}
+
+#form_brief{
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-between;
+  display: flex;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.MuiFormLabel-root, .MuiInputBase-input{
+  color: rgba(255,255,255,0.54);
+}
+
+.MuiFormLabel-root fieldset{
+  border-color: rgba(255,255,255,0.23);
 }

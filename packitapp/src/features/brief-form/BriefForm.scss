@@ -1,0 +1,41 @@
+#brief_form_root{
+    #brief_form {
+    flex-direction: column;
+    height: 350px;
+    justify-content: space-between;
+    display: flex;
+    margin-left: 8%;
+    margin-right: 8%;
+    .MuiFormLabel-root, .MuiInputBase-input {
+        color: rgba(255,255,255,0.54);
+    }
+    
+    .MuiOutlinedInput-notchedOutline {
+        border-color: rgba(255,255,255,0.23);
+    }
+
+    .send_brief_btn{
+        width: 150px;
+        margin-left: auto;
+        color: white;
+        background-color: #4680f5;
+        border-color: rgba(255,255,255,0.23);
+        &:hover{
+            border-color: rgba(255,255,255,0.54);
+        }
+        &:disabled{
+            background-color: rgba(70,128,245, 0.32);
+            color: rgba(255,255,255,0.23);
+        }
+    }
+
+    p.Mui-error{
+        font-size: 10px;
+        height: 10px;
+        color: rgba(255, 255, 255, 0.54);
+        margin-top: -2px;
+    }
+}
+}
+
+

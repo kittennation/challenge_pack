@@ -1,0 +1,58 @@
+{
+  "briefs": [
+    {
+      "id": 1,
+      "title": "Round box for wine",
+      "comment": "I need 1000 round boxes",
+      "productId": 3
+    },
+    {
+      "id": 2,
+      "title": "Beautiful bag Box",
+      "comment": "Beautiful bag Box with a cord",
+      "productId": 1
+    },
+    {
+      "title": "487",
+      "comment": "12345678978",
+      "productId": "3",
+      "id": 3
+    },
+    {
+      "title": "George",
+      "comment": "Un zoli paquet pour ma montre",
+      "productId": 1,
+      "id": 4
+    },
+    {
+      "title": "Julian",
+      "comment": "Un gros carton tout noir",
+      "productId": 2,
+      "id": 5
+    },
+    {
+      "title": "Marcel",
+      "comment": "PAckage pour des tshirt",
+      "productId": 1,
+      "id": 6
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Bag Box"
+    },
+    {
+      "id": 2,
+      "name": "Oval Box"
+    },
+    {
+      "id": 3,
+      "name": "Round Box"
+    },
+    {
+      "id": 4,
+      "name": "Other Box"
+    }
+  ]
+}

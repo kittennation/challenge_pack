@@ -6,14 +6,14 @@ First you need to go inside the packitapp folder.
 
 ### Server
 First you need to start the json-server with the following command :
-```properties
-yarn server-start
+```console
+$ yarn server-start
 ```
 Server will run on [localhost:3001](http://localhost:3001)
 ### App
 In an other terminal, you should now launch the app by running this command :
-```properties
-yarn app-start
+```console
+$ yarn app-start
 ```
 Now you can access to the app at [localhost:3000](http://localhost:3000)
 
@@ -31,24 +31,24 @@ Now you can access to the app at [localhost:3000](http://localhost:3000)
 ## Checklist
 
 #### Boilerplate
-- [ ] Prepare the project structure using create-react-app
-- [ ] Install librairies Redux/React-redux/redux-saga/json-server
+- [x] Prepare the project structure using create-react-app
+- [x] Install librairies Redux/React-redux/redux-saga/json-server
 
 #### Setup Redux/React-redux
-- [ ] Setup Redux / React-redux / Redux-saga (create store / reducer / actions creator / actions type)
+- [x] Setup Redux / React-redux / Redux-saga (create store / reducer / actions creator / actions type)
 
 #### Start Brief creation form
-- [ ] create BriefForm.js
-- [ ] Fetch products from json-server fake api and stock fetched products in the store (use connect of react-redux)
-- [ ] Get products data from props (use connect of react-redux)
-- [ ] Create a form div with 3 inputs inside (title, comment and products)
-- [ ] Store title, comment and product id value in state of the component
-- [ ] Add a submit button to create the brief
+- [x] create BriefForm.js
+- [x] Fetch products from json-server fake api and stock fetched products in the store (use connect of react-redux)
+- [x] Get products data from props (use connect of react-redux)
+- [x] Create a form div with 3 inputs inside (title, comment and products)
+- [x] Store title, comment and product id value in state of the component
+- [x] Add a submit button to create the brief
 
 #### Create a brief
-- [ ] create an action to create a brief
-- [ ] Launch this action on onClick of submit button
-- [ ] Store brief created from server's response to store
+- [x] create an action to create a brief
+- [x] Launch this action on onClick of submit button
+- [x] Store brief created from server's response to store
 
 #### ListBrief Component
 - [ ] Fetch Briefs data
