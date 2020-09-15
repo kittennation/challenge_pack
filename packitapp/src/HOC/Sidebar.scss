@@ -1,14 +1,23 @@
 .sidebar{
-    width: 300px;
+    width: 100%;
     background: linear-gradient(45deg, #8045ef 30%, #2e97f7 80%);
+
+    .header{
+        height: 100px;
+        padding-top: 12px;
+        color: white;
+        text-align: center;
+        font-size: 24px;
+    }
+    .headerTitle{
+        line-height: 48px;
+        margin-top: -8px;
+    }
 }
-.header{
-    height: 200px;
-    color: white;
-    text-align: center;
-    font-size: 24px;
+
+@media (min-width: 720px){
+    .sidebar{
+        width: 300px;
+    }
 }
-.headerTitle{
-    line-height: 48px;
-    margin-top: -8px;
-}
+

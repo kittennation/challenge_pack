@@ -9,6 +9,8 @@ import { Brief } from '../../redux/modules/brief'
 import { Props } from './BriefListContainer'
 import { Product } from '../../redux/modules/product'
 
+import { Spinner } from '../../HOC/Spinner'
+
 interface PaginationProps {
     count: number,
     page: number,
@@ -110,8 +112,7 @@ const BriefList = (props:Props) => {
         })
     }, []);
 
-    return <div id="brief_list">
-        <div id="brief_filters">&nbsp;</div>
+    return (props.briefs.length == 0)?<Spinner/>:<div id="brief_list">
         <div id="brief_content_list">
             <TableContainer>
                 <Table aria-label="Briefs List" stickyHeader>
@@ -125,6 +126,7 @@ const BriefList = (props:Props) => {
                                 />
                             </TableCell>
                             <TablePagination
+                                className="pagination"
                                 rowsPerPageOptions={[5,10,50, {label: 'All', value: props.briefs.length}]}
                                 colSpan={6}
                                 count={props.briefs.length}

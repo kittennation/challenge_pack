@@ -12,6 +12,13 @@
         .MuiTablePagination-spacer{
             flex: 1 1 0%;
         }
+
+        .pagination {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 }
 
@@ -20,4 +27,13 @@
     height: 48px;
     line-height: 48px;
     color: white;
+}
+
+@media (max-width: 720px) {
+    #brief_content_list{
+        height: 100vh;
+        .MuiTableContainer-root{
+            height: 100vh;
+        }
+    }
 }
