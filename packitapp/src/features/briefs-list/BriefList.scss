@@ -1,0 +1,23 @@
+#brief_list{
+    min-height: 100%;
+    max-height: 100%;
+    background-color: white;
+
+    #brief_content_list{
+        max-height: calc(100vh - 48px);
+        overflow-y: auto;
+        .MuiTableContainer-root{
+            max-height: calc(100vh - 48px);
+        }
+        .MuiTablePagination-spacer{
+            flex: 1 1 0%;
+        }
+    }
+}
+
+#brief_filters {
+    background-color: #2e97f7;
+    height: 48px;
+    line-height: 48px;
+    color: white;
+}

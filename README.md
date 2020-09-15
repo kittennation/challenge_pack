@@ -51,9 +51,12 @@ Now you can access to the app at [localhost:3000](http://localhost:3000)
 - [x] Store brief created from server's response to store
 
 #### ListBrief Component
-- [ ] Fetch Briefs data
-- [ ] Display them
+- [x] Fetch Briefs data
+- [x] Display them
 - [ ] Implement the routes
 
 #### Filter brief in BriefList by product
-- [ ] Filter Briefs
+- [x] Filter Briefs
+
+#### Material-UI
+- [x] Use Design System

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FieldsetHTMLAttributes } from 'react';
+import React, { useEffect, useState } from 'react';
 import Axios from 'axios'
 import { TextField, Button, Select, MenuItem, FormControl, InputLabel, FormHelperText } from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
@@ -124,9 +124,9 @@ export const BriefForm = (props:Props) => {
                     error={formik.touched.productId && !!formik.errors.productId}
                 >
                     <MenuItem value=""><em>Select a product</em></MenuItem>
-                    <MenuItem value={1}>Square</MenuItem>
-                    <MenuItem value={2}>Round</MenuItem>
-                    <MenuItem value={3}>Weird</MenuItem>
+                    {props.products.map(product => 
+                        <MenuItem value={product.id}>{product.name}</MenuItem>
+                    )}                    
                 </Select>
                 <FormHelperText className="Mui-error">{formik.touched.productId && formik.errors.productId}</FormHelperText>
             </FormControl>

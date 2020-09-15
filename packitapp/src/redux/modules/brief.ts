@@ -10,11 +10,13 @@ export type Brief = {
 }
 
 export type BriefState = {
-    briefs: Brief[]
+    briefs: Brief[],
+    filter: number
 }
 
 const initialState: BriefState = {
-    briefs: []
+    briefs: [],
+    filter: -1
 }
 
 export const hydrateBrief = (briefs: Brief[]) => {
@@ -33,11 +35,16 @@ export const editBrief = (brief: Brief) => {
     return typedAction('brief/EDIT', brief)
 }
 
+export const setFilter = (filter: number) => {
+    return typedAction('filter/SET', filter)
+}
+
 type BriefAction = ReturnType<
     | typeof hydrateBrief
     | typeof addBrief
     | typeof removeBrief
     | typeof editBrief
+    | typeof setFilter
 >
 
 export function briefReducer(
@@ -46,18 +53,22 @@ export function briefReducer(
 ):BriefState {
     switch(action.type){
         case 'brief/HYDRATE':{
-            return {briefs: action.payload}
+            return {
+                ...state,
+                briefs: action.payload}
         }
         case 'brief/ADD':{
             let _briefs = state.briefs
             _briefs.push(action.payload)
             return {
+                ...state,
                 briefs: _briefs
             }
         }
         case 'brief/REMOVE':{
             let _briefs = state.briefs.filter(b => (b.id != action.payload))
             return {
+                ...state,
                 briefs: _briefs
             }
         }
@@ -68,7 +79,14 @@ export function briefReducer(
                 _briefs[index] = action.payload
             }
             return {
+                ...state,
                 briefs: _briefs
+            }
+        }
+        case 'filter/SET':{
+            return {
+                ...state,
+                filter: action.payload
             }
         }
         default:
