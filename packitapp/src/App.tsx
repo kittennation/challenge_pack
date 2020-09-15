@@ -3,15 +3,14 @@ import logo from './logo.svg';
 import './App.scss';
 import { Container, Grid } from '@material-ui/core'
 import Sidebar from './HOC/Sidebar'
+import Content from './HOC/Content'
 
 
 function App() {
   return (
     <Grid container className="root" >
       <Sidebar/>
-      
-      <Grid item md>0</Grid>
-      
+      <Content />      
     </Grid>
   );
 }

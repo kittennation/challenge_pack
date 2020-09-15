@@ -1,10 +1,12 @@
 import { typedAction } from './utils'
+import { Product } from './product'
 
 export type Brief = {
     id: number,
     title: string,
     comment: string,
-    productId: number
+    productId: number,
+    product ?: Product
 }
 
 export type BriefState = {
