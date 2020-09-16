@@ -16,11 +16,11 @@ export const hydrateProducts = (products: Product[]) => {
     return typedAction('product/HYDRATE', products)
 }
 
-export const clearProducts = () => {
-    return typedAction('product/CLEAR')
+export const loadProduct = () => {
+    return typedAction('product/LOAD')
 }
 
-type ProductAction = ReturnType<typeof hydrateProducts | typeof clearProducts>;
+type ProductAction = ReturnType<typeof hydrateProducts | typeof loadProduct>;
 
 export function productReducer(
     state= initialState,
@@ -30,11 +30,6 @@ export function productReducer(
         case 'product/HYDRATE':{
             return {
                 products: action.payload
-            }
-        }
-        case 'product/CLEAR':{
-            return {
-                products: []
             }
         }
         default:{

@@ -23,33 +23,18 @@ export const hydrateBrief = (briefs: Brief[]) => {
     return typedAction('brief/HYDRATE', briefs)
 }
 
-export const addBrief = (brief: Brief)=> {
-    return typedAction('brief/ADD', brief)
-}
-
-export const removeBrief = (id: number) => {
-    return typedAction('brief/REMOVE', id)
-}
-
-export const editBrief = (brief: Brief) => {
-    return typedAction('brief/EDIT', brief)
-}
-
 export const setFilter = (filter: number) => {
     return typedAction('filter/SET', filter)
 }
 
-export const addBriefSuccess = () => {
-    return typedAction('brief/SUCCESS')
+export const loadBrief = () => {
+    return typedAction('brief/LOAD')
 }
 
 type BriefAction = ReturnType<
     | typeof hydrateBrief
-    | typeof addBrief
-    | typeof removeBrief
-    | typeof editBrief
     | typeof setFilter
-    | typeof addBriefSuccess
+    | typeof loadBrief
 >
 
 export function briefReducer(
@@ -61,32 +46,6 @@ export function briefReducer(
             return {
                 ...state,
                 briefs: action.payload}
-        }
-        case 'brief/ADD':{
-            let _briefs = state.briefs
-            _briefs.push(action.payload)
-            return {
-                ...state,
-                briefs: _briefs
-            }
-        }
-        case 'brief/REMOVE':{
-            let _briefs = state.briefs.filter(b => (b.id != action.payload))
-            return {
-                ...state,
-                briefs: _briefs
-            }
-        }
-        case 'brief/EDIT': {
-            let _briefs = state.briefs
-            let index = _briefs.findIndex(b => (b.id == action.payload.id))
-            if (index != -1){
-                _briefs[index] = action.payload
-            }
-            return {
-                ...state,
-                briefs: _briefs
-            }
         }
         case 'filter/SET':{
             return {

@@ -1,4 +1,5 @@
 #brief_form_root{
+    height: calc(100vh - 162px);
     #brief_form {
     flex-direction: column;
     height: 350px;
@@ -41,7 +42,8 @@
 @media (max-width: 720px){
     #brief_form_root{
         #brief_form {
-            height: calc(100vh - 112px);
+            height: calc(100vh - 162px);
+            padding-bottom: 50px;
         }
     }
 }

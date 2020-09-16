@@ -1,6 +1,5 @@
-import React from 'react'
 import { RootState } from '../../redux'
-import { hydrateBrief, setFilter } from '../../redux/modules/brief'
+import { hydrateBrief, setFilter, loadBrief } from '../../redux/modules/brief'
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from 'redux'
 import BriefList from './BriefList'
@@ -17,7 +16,8 @@ const mapStateToProps = (state: RootState, props:any) => ({
 const mapDispatchToProps = (dispatch: Dispatch) => {
     return bindActionCreators({
         hydrateBrief,
-        setFilter
+        setFilter,
+        loadBrief
     }, dispatch)
 }
 

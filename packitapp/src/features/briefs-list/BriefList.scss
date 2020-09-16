@@ -13,27 +13,25 @@
             flex: 1 1 0%;
         }
 
-        .pagination {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
     }
 }
 
-#brief_filters {
-    background-color: #2e97f7;
-    height: 48px;
-    line-height: 48px;
-    color: white;
-}
 
 @media (max-width: 720px) {
     #brief_content_list{
         height: 100vh;
         .MuiTableContainer-root{
             height: 100vh;
+        }
+        .pagination>div {
+            margin-top: -15px;
+
+            &>div:last-child{
+                position: absolute;
+                top: 25px;
+                width: 100%;
+                right: 10px;
+            }
         }
     }
 }

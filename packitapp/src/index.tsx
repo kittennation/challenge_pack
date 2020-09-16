@@ -7,13 +7,8 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga'
-import { rootReducer, RootState } from './redux'
+import { rootReducer } from './redux'
 import { rootSaga } from './redux/modules/watcher'
-
-const init : RootState = {
-  product: { products: []},
-  brief: { briefs: [], filter: 0}
-}
 
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware]

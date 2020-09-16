@@ -5,10 +5,18 @@ function* getBriefs() {
     try {
         const response = yield call(Axios.get, 'http://localhost:3001/briefs?_expand=product');
         const data = response.data;
-        console.log("Watcher :", data);
         return data
     } catch(err) {
-        console.log("Watcher Error :", err);
+        return null
+    }
+}
+
+function* getProducts(){
+    try {
+        const response = yield call(Axios.get, 'http://localhost:3001/products');
+        const data = response.data;
+        return data
+    } catch(err) {
         return null
     }
 }
@@ -19,12 +27,23 @@ function* loadBriefs() {
         yield put({type: 'brief/HYDRATE', payload: fetchRes})
 }
 
+function* loadProducts(){
+    let fetchRes = yield call(getProducts)
+    if(fetchRes !== null)
+        yield put({type: 'product/HYDRATE', payload: fetchRes})
+}
+
 function* watchLoadBriefs() {
-    yield takeEvery('brief/SUCCESS', loadBriefs)
+    yield takeEvery('brief/LOAD', loadBriefs)
+}
+
+function* watchLoadProducts() {
+    yield takeEvery('product/LOAD', loadProducts)
 }
 
 export function* rootSaga() {
     yield all([
-        watchLoadBriefs()
+        watchLoadBriefs(),
+        watchLoadProducts()
     ])
 }

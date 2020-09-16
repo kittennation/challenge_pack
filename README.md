@@ -53,7 +53,7 @@ Now you can access to the app at [localhost:3000](http://localhost:3000)
 #### ListBrief Component
 - [x] Fetch Briefs data
 - [x] Display them
-- [ ] Implement the routes
+- [ ] Implement the routes (Idk where i can put router, maybe for crud brief ?)
 
 #### Filter brief in BriefList by product
 - [x] Filter Briefs

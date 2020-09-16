@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Axios from 'axios'
-import { TableHead, Table, TableBody, TableCell, TableContainer, TableFooter, TablePagination, TableRow, IconButton } from '@material-ui/core'
+import { TableHead, Table, TableBody, TableCell, TableContainer, TablePagination, TableRow, IconButton } from '@material-ui/core'
 import { FormControl, InputLabel, Select, MenuItem } from '@material-ui/core'
 import { FirstPage, LastPage, KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons'
 import './BriefList.scss'
 
-import { Brief } from '../../redux/modules/brief'
 import { Props } from './BriefListContainer'
 import { Product } from '../../redux/modules/product'
 
@@ -76,9 +75,9 @@ const Filters = (props: FiltersProps) => {
             value={props.filter}
             onChange={(e)=>{props.setFilter(e.target.value)}}
         >
-            <MenuItem value={-1}>All</MenuItem>
+            <MenuItem key="-1" value={-1}>All</MenuItem>
             {props.products.map(product => (
-                <MenuItem value={product.id}>{product.name}</MenuItem>
+                <MenuItem key={product.id} value={product.id}>{product.name}</MenuItem>
             ))}
         </Select>
     </FormControl>
@@ -103,6 +102,7 @@ const BriefList = (props:Props) => {
       };
 
     useEffect(()=>{
+        props.loadBrief();
         Axios.get('http://localhost:3001/briefs?_expand=product')
         .then((res)=>{
             props.hydrateBrief(res.data)
@@ -112,7 +112,7 @@ const BriefList = (props:Props) => {
         })
     }, []);
 
-    return (props.briefs.length == 0)?<Spinner/>:<div id="brief_list">
+    return (props.briefs.length == 0)?<Spinner color="#2e97f7"/>:<div id="brief_list">
         <div id="brief_content_list">
             <TableContainer>
                 <Table aria-label="Briefs List" stickyHeader>

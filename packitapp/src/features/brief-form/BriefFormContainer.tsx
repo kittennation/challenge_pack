@@ -1,7 +1,6 @@
-import React from 'react'
 import { RootState } from '../../redux'
-import { hydrateProducts } from '../../redux/modules/product'
-import { addBrief, addBriefSuccess } from '../../redux/modules/brief'
+import { hydrateProducts, loadProduct } from '../../redux/modules/product'
+import { loadBrief } from '../../redux/modules/brief'
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from 'redux'
 import { BriefForm } from './BriefForm'
@@ -14,8 +13,8 @@ const mapStateToProps = (state: RootState) => ({
 const mapDispatchToProps = (dispatch: Dispatch) => {
     return bindActionCreators({
         hydrateProducts,
-        addBrief,
-        addBriefSuccess
+        loadBrief,
+        loadProduct
     }, dispatch)
 }
 

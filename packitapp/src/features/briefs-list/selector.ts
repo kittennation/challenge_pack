@@ -11,7 +11,7 @@ const getFilter = (state:RootState, props:any) =>
 export const makeGetVisibleBriefs = () => {
     return createSelector(
         [ getFilter, getBriefs ], ( filter, briefs ) => {
-            return briefs.filter(brief => (brief.productId == filter || filter == -1))
+            return briefs.filter(brief => (brief.productId === filter || filter === -1))
         }
     )
 }

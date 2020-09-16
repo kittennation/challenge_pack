@@ -2,8 +2,12 @@ import React from 'react'
 import AutorenewIcon from '@material-ui/icons/Autorenew'
 import "./Spinner.scss"
 
-export const Spinner = () => {
+interface Props {
+    color: string
+}
+
+export const Spinner = (props: Props) => {
     return <div className="spinner">
-        <AutorenewIcon />
+        <AutorenewIcon style={{ color: props.color }}/>
     </div>
 }

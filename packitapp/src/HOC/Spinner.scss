@@ -1,5 +1,10 @@
 .spinner{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     svg.MuiSvgIcon-root{
+        font-size: 72px;
         animation: runInfinity 2s infinite;
     }
 }
