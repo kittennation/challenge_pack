@@ -3,6 +3,9 @@
 ## Scripts
 
 First you need to go inside the packitapp folder.
+```console
+$ cd ./packitapp
+```
 
 ### Server
 First you need to start the json-server with the following command :
@@ -53,10 +56,13 @@ Now you can access to the app at [localhost:3000](http://localhost:3000)
 #### ListBrief Component
 - [x] Fetch Briefs data
 - [x] Display them
-- [ ] Implement the routes (Idk where i can put router, maybe for crud brief ?)
+- [ ] <span style="color: purple"><b><em>Implement the routes</em></b></span> (Idk where i can put router, maybe for crud brief ?)
 
 #### Filter brief in BriefList by product
 - [x] Filter Briefs
 
 #### Material-UI
 - [x] Use Design System
+
+#### Loader
+- [x] Create a Spinner on Loading
