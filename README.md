@@ -1,5 +1,7 @@
 # challenge_pack
 
+![PackitApp](./screenshot.jpg?raw=true "PackitApp")
+
 ## Scripts
 
 First you need to go inside the packitapp folder.
