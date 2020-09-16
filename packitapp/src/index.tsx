@@ -4,11 +4,26 @@ import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { rootReducer } from './redux'
-// import { Brief } from './features/Brief'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga'
+import { rootReducer, RootState } from './redux'
+import { rootSaga } from './redux/modules/watcher'
 
-const store = createStore(rootReducer);
+const init : RootState = {
+  product: { products: []},
+  brief: { briefs: [], filter: 0}
+}
+
+const sagaMiddleware = createSagaMiddleware();
+const middleware = [sagaMiddleware]
+
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(...middleware))
+)
+
+sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
   

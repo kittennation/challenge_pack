@@ -53,6 +53,7 @@ export const BriefForm = (props:Props) => {
             .then((res)=>{
                 console.log(res);
                 props.addBrief(res.data);
+                props.addBriefSuccess();
             })
             .catch((err)=>{
                 console.log(err)

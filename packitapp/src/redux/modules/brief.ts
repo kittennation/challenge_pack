@@ -39,12 +39,17 @@ export const setFilter = (filter: number) => {
     return typedAction('filter/SET', filter)
 }
 
+export const addBriefSuccess = () => {
+    return typedAction('brief/SUCCESS')
+}
+
 type BriefAction = ReturnType<
     | typeof hydrateBrief
     | typeof addBrief
     | typeof removeBrief
     | typeof editBrief
     | typeof setFilter
+    | typeof addBriefSuccess
 >
 
 export function briefReducer(

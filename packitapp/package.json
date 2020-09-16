@@ -17,6 +17,7 @@
     "@types/react-redux": "^7.1.9",
     "@types/redux": "^3.6.0",
     "axios": "^0.20.0",
+    "express": "^4.17.1",
     "formik": "^2.1.5",
     "json-server": "^0.16.1",
     "lodash": "^4.17.20",
@@ -34,10 +35,13 @@
   },
   "scripts": {
     "server-start": "json-server --watch db.json -p 3001",
+    "server-serve": "HOST=0.0.0.0 json-server --watch db.json -p 3001",
     "app-start": "react-scripts start",
     "app-build": "react-scripts build",
     "app-test": "react-scripts test",
-    "app-eject": "react-scripts eject"
+    "app-eject": "react-scripts eject",
+    "app-serve": "HOST=0.0.0.0 react-scripts start",
+    "app-serv": "serve -s build"
   },
   "eslintConfig": {
     "extends": "react-app"
